@@ -1,11 +1,11 @@
 ---
 # Remove all ssh client configuration files
 # from `/etc/ssh/ssh_config.d/*.conf`
-ssh_client_cleanup: true
+ssh_client_cleanup: false
 
 # Remove all ssh server configuration files
 # from `/etc/ssh/sshd_config.d/*.conf`
-ssh_server_cleanup: true
+ssh_server_cleanup: false
 
 # `inet` for IPv4 Only
 # `inet6` for IPv6 Only
