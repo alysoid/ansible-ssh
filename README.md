@@ -2,7 +2,7 @@
 
 Secured and hardened [OpenSSH](https://wiki.archlinux.org/title/OpenSSH) (OpenBSD Secure Shell) client - configured with `/etc/ssh/ssh_config` and snippets in `/etc/ssh/ssh_config.d/*.conf` - and [sshd](https://wiki.archlinux.org/title/OpenSSH#Server_usage) (OpenSSH server daemon) - configured with `/etc/ssh/sshd_config`, snippets in `/etc/ssh/sshd_config.d/*.conf` and managed by `sshd.service`.
 
-Default configuration tested with [ssh-audit](https://github.com/jtesta/ssh-audit) v2.5.0 for `OpenSSH 9.0`, compatible with `OpenSSH 7.4+`
+Default configuration tested with [ssh-audit](https://github.com/jtesta/ssh-audit) v2.5.0 for `OpenSSH 9.0`, compatible with `OpenSSH 7.4+`.
 
 ## Role variables
 

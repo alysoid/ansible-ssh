@@ -3,6 +3,10 @@
 # OpenSSH client system-wide configuration file.
 # See ssh_config(5) for details.
 
+{% if item.description is defined and item.description | length %}
+# {{ item.description }}
+{% endif %}
+
 {% for key, value in item.options.items() %}
 {% if value is iterable and (value is not string) %}
 {% if value is not mapping %}

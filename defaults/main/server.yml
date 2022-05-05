@@ -130,7 +130,7 @@ ssh_server_security_network:
 #
 ssh_server_userenv:
   name: 30-UserEnv
-  description: "User environment configuration"
+  description: User environment configuration
   options:
     # Enabling environment processing may enable users to bypass access restrictions
     PermitUserEnvironment: "no"
@@ -140,7 +140,7 @@ ssh_server_userenv:
 #
 ssh_server_misc:
   name: 40-Misc
-  description: "Misc configuration"
+  description: Misc configuration
   options:
     # Disable server-side compression after the user has authenticated successfully
     Compression: "no"
@@ -158,7 +158,7 @@ ssh_server_misc:
 #
 ssh_server_sftp:
   name: 90-sftp
-  description: "SFTP matching configuration"
+  description: SFTP matching configuration
   options:
     # Override default of no subsystems
     Subsystem: sftp internal-sftp -l INFO -f LOCAL6 -u 0027
