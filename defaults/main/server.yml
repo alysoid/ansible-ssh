@@ -25,7 +25,7 @@ catena_ssh_server_basic:
     # TCP port sshd should listen on
     Port: "{{ catena_ssh_server_ports }}"
     # Allow root login only using certificates
-    PermitRootLogin: "no"
+    PermitRootLogin: "prohibit-password"
     # Enable both IPv4 and IPv6 addresses
     AddressFamily: "{{ catena_ssh_address_family }}"
     # Addresses sshd listens on
