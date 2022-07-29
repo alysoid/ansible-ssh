@@ -5,22 +5,22 @@
 #
 
 # List of snippet configuration files
-ssh_client:
-  - "{{ ssh_client_basic }}"
-  - "{{ ssh_client_security }}"
-  - "{{ ssh_client_misc }}"
+catena_ssh_client:
+  - "{{ catena_ssh_client_basic }}"
+  - "{{ catena_ssh_client_security }}"
+  - "{{ catena_ssh_client_misc }}"
 
 #
 # Basic configuration
 #
-ssh_client_basic:
+catena_ssh_client_basic:
   name: 10-Basic
   description: Basic configuration
   options:
     # Default TCP port for connections
-    Port: "{{ ssh_client_port }}"
+    Port: "{{ catena_ssh_client_port }}"
     # Address family should be limited to the active network configuration.
-    AddressFamily: "{{ ssh_address_family }}"
+    AddressFamily: "{{ catena_ssh_address_family }}"
     # https://man.archlinux.org/man/ssh_config.5.en#PATTERNS
     # Host:
     #   - names: ["domain.com"]
@@ -29,7 +29,7 @@ ssh_client_basic:
 #
 # Security configuration
 #
-ssh_client_security:
+catena_ssh_client_security:
   name: 20-Security
   description: Security configuration
   options:
@@ -52,16 +52,16 @@ ssh_client_security:
     # Disable local command execution.
     PermitLocalCommand: "no"
     # Use strong defaults
-    Ciphers: "{{ ssh_ciphers | join(',') }}"
-    MACs: "{{ ssh_macs | join(',') }}"
-    KexAlgorithms: "{{ ssh_kex | join(',') }}"
+    Ciphers: "{{ catena_ssh_ciphers | join(',') }}"
+    MACs: "{{ catena_ssh_macs | join(',') }}"
+    KexAlgorithms: "{{ catena_ssh_kex | join(',') }}"
     # Hostkey algorithms to use in order of preference.
-    HostKeyAlgorithms: "{{ ssh_host_key_algorithms | join(',') }}"
+    HostKeyAlgorithms: "{{ catena_ssh_host_key_algorithms | join(',') }}"
 
 #
 # Misc configuration
 #
-ssh_client_misc:
+catena_ssh_client_misc:
   name: 30-Misc
   description: Misc configuration
   options:

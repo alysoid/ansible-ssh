@@ -5,40 +5,40 @@
 #
 
 # List of snippet configuration files
-ssh_server:
-  - "{{ ssh_server_basic }}"
-  - "{{ ssh_server_security }}"
-  - "{{ ssh_server_security_crypto }}"
-  - "{{ ssh_server_security_auth }}"
-  - "{{ ssh_server_security_network }}"
-  - "{{ ssh_server_userenv }}"
-  - "{{ ssh_server_misc }}"
-  - "{{ ssh_server_sftp }}"
+catena_ssh_server:
+  - "{{ catena_ssh_server_basic }}"
+  - "{{ catena_ssh_server_security }}"
+  - "{{ catena_ssh_server_security_crypto }}"
+  - "{{ catena_ssh_server_security_auth }}"
+  - "{{ catena_ssh_server_security_network }}"
+  - "{{ catena_ssh_server_userenv }}"
+  - "{{ catena_ssh_server_misc }}"
+  - "{{ catena_ssh_server_sftp }}"
 
 #
 # Basic configuration
 #
-ssh_server_basic:
+catena_ssh_server_basic:
   name: 10-Basic
   description: Basic configuration
   options:
     # TCP port sshd should listen on
-    Port: "{{ ssh_server_ports }}"
+    Port: "{{ catena_ssh_server_ports }}"
     # Allow root login only using certificates
     PermitRootLogin: "no"
     # Enable both IPv4 and IPv6 addresses
-    AddressFamily: "{{ ssh_address_family }}"
+    AddressFamily: "{{ catena_ssh_address_family }}"
     # Addresses sshd listens on
     ListenAddress: ["0.0.0.0"]
     # List of file containing private host keys used by SSH
-    HostKey: "{{ ssh_host_key_files }}"
+    HostKey: "{{ catena_ssh_host_key_files }}"
     # Host key algorithms that the server offers
-    HostKeyAlgorithms: "{{ ssh_host_key_algorithms | join(',') }}"
+    HostKeyAlgorithms: "{{ catena_ssh_host_key_algorithms | join(',') }}"
 
 #
 # Security configuration
 #
-ssh_server_security:
+catena_ssh_server_security:
   name: 20-Security
   description: Security configuration
   options:
@@ -51,18 +51,18 @@ ssh_server_security:
 #
 # Security: Cryptography
 #
-ssh_server_security_crypto:
+catena_ssh_server_security_crypto:
   name: 21-Cryptography
   description: "Security: Cryptography"
   options:
-    Ciphers: "{{ ssh_ciphers | join(',') }}"
-    MACs: "{{ ssh_macs | join(',') }}"
-    KexAlgorithms: "{{ ssh_kex | join(',') }}"
+    Ciphers: "{{ catena_ssh_ciphers | join(',') }}"
+    MACs: "{{ catena_ssh_macs | join(',') }}"
+    KexAlgorithms: "{{ catena_ssh_kex | join(',') }}"
 
 #
 # Security: Authentication
 #
-ssh_server_security_auth:
+catena_ssh_server_security_auth:
   name: 22-Authentication
   description: "Security: Authentication"
   options:
@@ -100,7 +100,7 @@ ssh_server_security_auth:
 #
 # Security: Network
 #
-ssh_server_security_network:
+catena_ssh_server_security_network:
   name: 23-Network
   description: "Security: Network"
   options:
@@ -128,7 +128,7 @@ ssh_server_security_network:
 #
 # User environment configuration
 #
-ssh_server_userenv:
+catena_ssh_server_userenv:
   name: 30-UserEnv
   description: User environment configuration
   options:
@@ -138,7 +138,7 @@ ssh_server_userenv:
 #
 # Misc configuration
 #
-ssh_server_misc:
+catena_ssh_server_misc:
   name: 40-Misc
   description: Misc configuration
   options:
@@ -156,7 +156,7 @@ ssh_server_misc:
 #
 # SFTP matching configuration
 #
-ssh_server_sftp:
+catena_ssh_server_sftp:
   name: 90-sftp
   description: SFTP matching configuration
   options:

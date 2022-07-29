@@ -14,4 +14,4 @@
     owner: root
     group: root
     mode: "0644"
-  loop: "{{ ssh_client }}"
+  loop: "{{ catena_ssh_client }}"

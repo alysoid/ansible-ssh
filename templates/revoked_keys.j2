@@ -2,6 +2,6 @@
 # OpenSSH server revoked public keys
 # See sshd_config(5) for details.
 
-{% for key in ssh_server_revoked_keys %}
+{% for key in catena_ssh_server_revoked_keys %}
 {{ key }}
 {% endfor %}

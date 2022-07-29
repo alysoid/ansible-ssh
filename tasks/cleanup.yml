@@ -3,7 +3,7 @@
   ansible.builtin.find:
     paths: /etc/ssh/ssh_config.d
     patterns: "*.conf"
-  when: ssh_client_cleanup
+  when: catena_ssh_client_cleanup
   register: existing_config
 
 - name: Remove existing configuration files
@@ -11,14 +11,14 @@
     path: "{{ item.path }}"
     state: absent
   loop: "{{ existing_config.files }}"
-  when: ssh_client_cleanup
+  when: catena_ssh_client_cleanup
   notify: Restart sshd
 
 - name: Check sshd existing configuration files
   ansible.builtin.find:
     paths: /etc/ssh/sshd_config.d
     patterns: "*.conf"
-  when: ssh_server_cleanup
+  when: catena_ssh_server_cleanup
   register: existing_config
 
 - name: Remove existing configuration files
@@ -26,5 +26,5 @@
     path: "{{ item.path }}"
     state: absent
   loop: "{{ existing_config.files }}"
-  when: ssh_server_cleanup
+  when: catena_ssh_server_cleanup
   notify: Restart sshd
